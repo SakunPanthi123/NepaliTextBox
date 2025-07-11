@@ -1,0 +1,125 @@
+/* Support for Nepali fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600&display=swap');
+
+.nepali-textbox-container {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.nepali-textbox {
+  width: 100%;
+  min-height: 120px;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-family: 'Noto Sans Devanagari', 'Segoe UI', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  background-color: #fafafa;
+}
+
+.nepali-textbox:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+  background-color: white;
+}
+
+.nepali-textbox::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+/* Demo specific styles */
+.demo-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.demo-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.demo-header h1 {
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.demo-header p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.test-section {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #4CAF50;
+}
+
+.test-section h3 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.test-case {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 6px;
+  border: 1px solid #e9ecef;
+}
+
+.test-case-label {
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.test-case-input {
+  font-family: 'Courier New', monospace;
+  background-color: #f8f9fa;
+  padding: 0.5rem;
+  border-radius: 4px;
+  margin: 0.5rem 0;
+  border: 1px solid #dee2e6;
+}
+
+.test-case-output {
+  font-family: 'Noto Sans Devanagari', 'Segoe UI', Arial, sans-serif;
+  background-color: #e8f5e8;
+  padding: 0.5rem;
+  border-radius: 4px;
+  margin: 0.5rem 0;
+  border: 1px solid #c3e6cb;
+  font-size: 1.1rem;
+}
+
+.instructions {
+  background-color: #e3f2fd;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  border-left: 4px solid #2196F3;
+}
+
+.instructions h3 {
+  color: #1976D2;
+  margin-bottom: 1rem;
+}
+
+.instructions ul {
+  color: #333;
+  line-height: 1.6;
+}
+
+.instructions li {
+  margin-bottom: 0.5rem;
+}
