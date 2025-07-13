@@ -1,24 +1,24 @@
 import React, { useState, useRef, useCallback, useEffect } from "react";
 import { nepaliMapping, getSortedMappingKeys } from "./nepaliMapping";
-import "./NepaliTextBox.css";
 
-interface NepaliTextBoxProps {
+type  NepaliTextBoxProps = {
   value?: string;
   onChange?: (value: string) => void;
   placeholder?: string;
   className?: string;
   rows?: number;
   cols?: number;
-}
+} & Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, 'onChange'>
 
-export const NepaliTextBox: React.FC<NepaliTextBoxProps> = ({
+export const NepaliTextBox = ({
   value = "",
   onChange,
   placeholder = "Type in romanized Nepali...",
   className = "",
   rows = 5,
   cols = 50,
-}) => {
+  ...props
+}: NepaliTextBoxProps) => {
   const [text, setText] = useState(value);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const sortedKeys = useRef(getSortedMappingKeys());
@@ -106,17 +106,7 @@ export const NepaliTextBox: React.FC<NepaliTextBoxProps> = ({
 
   // Handle key events for better user experience
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    // Allow normal keyboard navigation
-    if (
-      e.key === "ArrowLeft" ||
-      e.key === "ArrowRight" ||
-      e.key === "ArrowUp" ||
-      e.key === "ArrowDown" ||
-      e.key === "Home" ||
-      e.key === "End"
-    ) {
-      return;
-    }
+    e.stopPropagation();
   };
 
   // Sync external value changes
@@ -138,6 +128,7 @@ export const NepaliTextBox: React.FC<NepaliTextBoxProps> = ({
         cols={cols}
         className="nepali-textbox"
         spellCheck={false}
+        {...props}
       />
     </div>
   );
